@@ -1,0 +1,17 @@
+{
+  "name": "placholder_site",
+  "version": "0.0.0",
+  "authors": [
+    "sonicparke <github@sonicparke.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

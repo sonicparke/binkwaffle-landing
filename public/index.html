@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>binkwaffle</title>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,700' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- build:css css/site.css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- endbuild -->
+</head>
+<body>
+
+    <section class="container-fluid">
+        <div class="col-md-offset-1 col-md-3 pad-top-5percent block-panel">
+            <header class="pad-bottom-5percent">
+                <div class="logo">
+                    <img src="images/logo-white.png" alt="binkwaffle dumpling bag" />
+                </div>
+                <h2>We're working on a new site.</h2>
+                <h4>Until then please contact us with any questions.</h4>
+            </header>
+            <article class="">
+                <form id="contactForm" class="form-horizontal" role="form">
+                    <div class="form-group">
+                    <label for="inputName" class="control-label sr-only">Name</label>
+                    <div class="col-md-12 col-sm-12">
+                      <input name="name" type="text" class="form-control" id="inputName" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="control-label sr-only">Email</label>
+                    <div class="col-md-12 col-sm-12">
+                      <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  <!-- <div class="form-group">
+                    <label for="inputSubject" class="control-label sr-only">Subject</label>
+                    <div class="col-md-12 col-sm-12">
+                      <input name="subject" type="text" class="form-control" id="inputSubject" placeholder="Subject">
+                    </div>
+                  </div> -->
+                  <div class="form-group">
+                    <label for="inputMessage" class="control-label sr-only">Message</label>
+                    <div class="col-md-12 col-sm-12">
+                      <textarea id="inputMessage" name="message" class="form-control" rows="6"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      <button type="button" id="submitButton" class="btn btn-default">Send</button>
+                    </div>
+                  </div>
+                </form>
+
+            </article>
+        </div>
+
+    </section>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function($) {
+        console.log('hellop wo');
+        $('#submitButton').on('click', function() {
+            var inputName = $('#inputName').val();
+            var inputEmail = $('#inputEmail').val();
+            var inputMessage = $('#inputMessage').val();
+            console.log('inputName :', inputName);
+            console.log('inputEmail :', inputEmail);
+            console.log('inputMessage :', inputMessage);
+            var formData = $('#contactForm').serialize();
+            $.ajax({
+                url: 'includes/mailer.php',
+                type: 'post',
+                dataType: 'json',
+                data: formData,
+                success: function(data) {
+                           console.log('data :', data);
+                         }
+            });
+        });
+    });
+    </script>
+    <!-- build:js js/app.js -->
+    <!-- endbuild -->
+</body>
+</html>

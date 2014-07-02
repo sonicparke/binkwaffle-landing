@@ -1,0 +1,31 @@
+body {
+  background-color: transparent;
+  font-family: 'Raleway';
+  font-weight: 300;
+}
+
+header {
+  color: #ffffff;
+}
+
+html {
+  background: url(../images/3.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pad-top-5percent {
+  padding-top: 5%;
+}
+
+.pad-bottom-5percent {
+  padding-bottom: 5%;
+}
+
+.block-panel {
+  color: #ffffff;
+  background-color: #444444;
+  background-color: rgba(0,0,0,0.5);
+}
